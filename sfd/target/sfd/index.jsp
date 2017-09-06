@@ -34,9 +34,18 @@
                     <td ><input type="text" readonly name="email" id="three"></td>
                 </tr>
                 <tr>
+                    <td>学院</td>
+                    <td ><input type="text" readonly name="academy" id="four"></td>
+                </tr>
+                <tr>
+                    <td>班级</td>
+                    <td ><input type="text" readonly name="classAndGrade" id="five"></td>
+                </tr>
+                <tr>
                     <td>验证码</td>
                     <td ><input type="text" readonly name="captcha" id="code"></td>
                 </tr>
+
             </table>
             <div class="button">
                 <input type="submit" value="确定">
@@ -119,6 +128,85 @@
                 <%
                     }
                 %>
+
+
+
+                <%--<%--%>
+                    <%--if(request.getAttribute("academy") != null && ((String)request.getAttribute("academy")).trim().length() != 0){--%>
+                <%--%>--%>
+                <%--<div class="academy">--%>
+                    <%--<label name="academy">学院</label>--%>
+                    <%--<input type="text" value='<%=(String)request.getAttribute("academy")%>' class="form-control" name="academy" required placeholder="学院" ng-focus></div>--%>
+                <%--<%--%>
+                <%--}else {--%>
+                <%--%>--%>
+                <%--<div class="academy">--%>
+                    <%--<label name="academy">学院</label>--%>
+                    <%--<input type="text" class="form-control" name="academy" required placeholder="学院" ng-focus></div>--%>
+                <%--<%--%>
+                    <%--}--%>
+                <%--%>--%>
+
+
+
+                <%
+                    if(request.getAttribute("academy") != null && ((String)request.getAttribute("academy")).trim().length() != 0){
+                %>
+                <div class="academy">
+                    <label name="academy">学院</label>
+                    <select class="form-control" name="academy">
+                        <option value="通信与信息工程学院" selected>通信与信息工程学院
+                        <option value="电子工程学院">电子工程学院
+                        <option value="计算机学院">计算机学院
+                        <option value="自动化学院">自动化学院
+                        <option value="经济与管理学院">经济与管理学院
+                        <option value="理学院">理学院
+                        <option value="人文社科学院">人文社科学院
+                        <option value="外国语学院">外国语学院
+                        <option value="数字艺术学院">数字艺术学院
+                    </select>
+                </div>
+                    <%--<input type="text" value='<%=(String)request.getAttribute("email")%>' class="form-control" name="email" required placeholder="邮箱" ng-focus></div>--%>
+                <%
+                }else {
+                %>
+                    <div class="academy">
+                        <label name="academy">学院</label>
+                        <select class="form-control" name="academy">
+                            <option value="通信与信息工程学院" selected>通信与信息工程学院
+                            <option value="电子工程学院">电子工程学院
+                            <option value="计算机学院">计算机学院
+                            <option value="自动化学院">自动化学院
+                            <option value="经济与管理学院">经济与管理学院
+                            <option value="理学院">理学院
+                            <option value="人文社科学院">人文社科学院
+                            <option value="外国语学院">外国语学院
+                            <option value="数字艺术学院">数字艺术学院
+                        </select>
+                    </div>
+                <%
+                    }
+                %>
+
+                <%
+                    if(request.getAttribute("classAndGrade") != null && ((String)request.getAttribute("classAndGrade")).trim().length() != 0){
+                %>
+                <div class="classAndGrade">
+                    <label name="classAndGrade">班级</label>
+                    <input type="text" value='<%=(String)request.getAttribute("classAndGrade")%>' class="form-control" name="classAndGrade" required placeholder="班级(如: 计科1701)" ng-focus></div>
+                <%
+                }else {
+                %>
+                <div class="classAndGrade">
+                    <label name="classAndGrade">班级</label>
+                    <input type="text" class="form-control" name="classAndGrade" required placeholder="班级(如: 计科1701)" ng-focus></div>
+                <%
+                    }
+                %>
+
+
+
+
                 <div class="captcha">
                     <label name="captcha">验证码&nbsp;&nbsp;&nbsp;</label><img width="80px" height="30px" src="./image.do">
                     <input type="text" class="form-control" name="captcha"/>

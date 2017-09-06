@@ -33,6 +33,15 @@ public class Apply extends HttpServlet{
         String name = req.getParameter("name");
         String email = req.getParameter("email");
         String captcha = req.getParameter("captcha");
+        String academy = req.getParameter("academy");
+        String classAndGrade = req.getParameter("classAndGrade");
+
+        System.out.println(sno);
+        System.out.println(name);
+        System.out.println(email);
+        System.out.println(captcha);
+        System.out.println(academy);
+        System.out.println(classAndGrade);
 
         if(Pattern.matches("^\\d{8}$", sno) == false){
             errorList.add("学号格式不正确");
@@ -47,13 +56,16 @@ public class Apply extends HttpServlet{
         }
 
         if(errorList.size() == 0){
-            String sql = "insert into userinfo(sno, name, email) values(?, ?, ?)";
+            String sql = "insert into userinfo(sno, name, email, academy, classAndGrade) values(?, ?, ?, ?, ?)";
             Connection conn = DBUtils.getConnection();
             try {
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, sno);
                 ps.setString(2, name);
                 ps.setString(3, email);
+                ps.setString(4, academy);
+                ps.setString(5, classAndGrade);
+
                 ps.executeUpdate();
             } catch (MySQLIntegrityConstraintViolationException e){
                 errorList.add("该学号已经报名");
