@@ -43,7 +43,9 @@ public class Apply extends HttpServlet{
         System.out.println(academy);
         System.out.println(classAndGrade);
 
-        if(Pattern.matches("^\\d{8}$", sno) == false){
+        if (!Pattern.matches("0\\d1\\d{5}$", sno)) {
+
+//        if(Pattern.matches("^\\d{8}$", sno) == false){
             errorList.add("学号格式不正确");
         }
         if(Pattern.matches("^(\\w-*\\.*)+@(\\w-?)+(\\.\\w{2,})+$", email) == false){

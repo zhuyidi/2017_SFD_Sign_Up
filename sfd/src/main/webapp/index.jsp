@@ -129,26 +129,6 @@
                     }
                 %>
 
-
-
-                <%--<%--%>
-                    <%--if(request.getAttribute("academy") != null && ((String)request.getAttribute("academy")).trim().length() != 0){--%>
-                <%--%>--%>
-                <%--<div class="academy">--%>
-                    <%--<label name="academy">学院</label>--%>
-                    <%--<input type="text" value='<%=(String)request.getAttribute("academy")%>' class="form-control" name="academy" required placeholder="学院" ng-focus></div>--%>
-                <%--<%--%>
-                <%--}else {--%>
-                <%--%>--%>
-                <%--<div class="academy">--%>
-                    <%--<label name="academy">学院</label>--%>
-                    <%--<input type="text" class="form-control" name="academy" required placeholder="学院" ng-focus></div>--%>
-                <%--<%--%>
-                    <%--}--%>
-                <%--%>--%>
-
-
-
                 <%
                     if(request.getAttribute("academy") != null && ((String)request.getAttribute("academy")).trim().length() != 0){
                 %>
@@ -166,7 +146,6 @@
                         <option value="数字艺术学院">数字艺术学院
                     </select>
                 </div>
-                    <%--<input type="text" value='<%=(String)request.getAttribute("email")%>' class="form-control" name="email" required placeholder="邮箱" ng-focus></div>--%>
                 <%
                 }else {
                 %>
